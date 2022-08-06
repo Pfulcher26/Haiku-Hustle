@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 50px;
+  font-family: Helvetica;
+  display: flex; 
+  justify-content: center;
+  background-color: bisque;
+}
+
+.outer-container {
+  width: 900px; 
+  height: 700px;
+  display: grid;
+  grid-template-columns: 2fr 6fr; 
+  grid-template-rows: [row-1-start] 25% [row-1-end] 100px [third-line] auto [last-line]; 
+  justify-content: center;
+  border: solid goldenrod 1px;
+}
+
+
+.inner-right-container {
+  display:flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  grid-column-start: 2; 
+  grid-row-start: 1;
+  grid-row-end: 3;
+  width: 700px;
+  height: 700px;
+  position: relative;
+  align-items: center;
+  border: solid goldenrod 3px; 
+  background-image: url('colorinjapan.png'); 
+}
