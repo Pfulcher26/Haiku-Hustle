@@ -2,6 +2,27 @@
   box-sizing: border-box;
 }
 
+
+.haiku-lines {
+  grid-row-start: 1;
+  grid-column-start: 2; 
+  font-family: 'righteous'; 
+  font-style: bold; 
+  font-size: 1rem; 
+  z-index: 1; 
+  display: flex; 
+  justify-content: left;
+  margin: 270px 270px;  
+}
+
+.list-group-item {
+  border: solid goldenrod 2px; 
+  display: flex; 
+  justify-content: center; 
+  width: 250px;
+  position: relative;
+}
+
 body {
   margin: 50px;
   font-family: Helvetica;
@@ -21,16 +42,16 @@ body {
   background-color: rgb(243, 239, 237); 
 }
 
+
 #arrow-icon {
   display: flex;
-  grid-row-start: 2;
+  grid-row-start: 1;
   grid-column-start: 1;
-  margin: 0px 0px 20px 80px;
+  position: absolute; 
 }
 
 .round-box {
   grid-row-start: 1;
-  grid-column-start: 1; 
   color: rgb(21, 19, 19); 
   font-family: 'righteous'; 
   font-style: bold; 
@@ -41,17 +62,20 @@ body {
   margin: 20px; 
 }
 
+
 .instructions{
   grid-row-start: 2;
   grid-column-start: 1; 
   color: rgb(21, 19, 19); 
   font-family: 'righteous'; 
   font-style: bold; 
-  font-size: 1.2rem; 
+  font-size: 1rem; 
   z-index: 1; 
   display: flex; 
-  justify-content: center; 
-  margin: 10px 30px 30px 30px; 
+  margin: 30px 30px 30px 70px; 
+  position: absolute; 
+  width: 100px; 
+  visibility: hidden;
 }
 
 
@@ -85,15 +109,14 @@ body {
 .inner-right-container {
   display:flex;
   flex-flow: column nowrap;
-  justify-content: center;
   grid-column-start: 2; 
   grid-row-start: 1;
   grid-row-end: 3;
   width: 700px;
-  height: 700px;
-  position: relative;
-  align-items: center;
+  height: 698px;
   border: solid goldenrod 3px; 
   background-image: url('colorinjapan.png'); 
+  position: relative;
+  margin: 0px 0px 0px 100px;
 }
 
