@@ -30,14 +30,16 @@ for(i = 0; i < line.length; i++) {
   line[i].addEventListener('click', function(){
     if (lineHTML === "") {
       clickSound.play()
+      currentElement.style.background = 'goldenrod'; 
       currentElement.classList.add('disabled')
       lineHTML = currentElement.innerHTML;
       previousIndex = currentElement
     } else {
       clickSoundTwo.play()
+      previousIndex.style.background = 'white';
+      previousIndex.classList.remove('disabled')
       lineHTML !== currentElement.innerHTML 
       previousIndex.innerHTML = currentElement.innerHTML 
-      previousIndex.classList.remove('disabled')
       currentElement.innerHTML = lineHTML;
       lineHTML = ""
     } 
