@@ -102,7 +102,7 @@ body {
   z-index: 1; 
   display: flex; 
   justify-content: right;
-  margin: 370px 30px 20px 560px;  
+  margin: 359px 30px 20px 560px;  
 }
 
 .inner-right-container {
@@ -119,3 +119,11 @@ body {
   margin: 0px 0px 0px 100px;
 }
 
+#seal {
+  grid-column-start: 2; 
+  height:50px;
+  width: 75px;
+  margin: 622px 0px 0px 60px;
+  z-index: 1;
+  position: absolute; 
+}
