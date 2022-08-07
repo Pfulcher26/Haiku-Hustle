@@ -10,6 +10,8 @@ arrowIcon.addEventListener('click', ()=> {
 //places
 let lineHTML= ""
 let previousIndex = ""
+let clickSound = new Audio('click.wav')
+let clickSoundTwo = new Audio('click2.wav')
 
 //loops through every element in the selected group and attaches event listeners
 let line = document.querySelectorAll('.list-group-item');
@@ -18,10 +20,12 @@ for(i = 0; i < line.length; i++) {
   let currentElement = line[i] 
   line[i].addEventListener('click', function(){
     if (lineHTML === "") {
+      clickSound.play()
       currentElement.classList.add('disabled')
       lineHTML = currentElement.innerHTML;
       previousIndex = currentElement
     } else {
+      clickSoundTwo.play()
       lineHTML !== currentElement.innerHTML 
       previousIndex.innerHTML = currentElement.innerHTML 
       previousIndex.classList.remove('disabled')
