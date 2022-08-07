@@ -20,7 +20,7 @@ let line = document.querySelectorAll('.list-group-item');
 arrowIcon.addEventListener('click', ()=> {
   feetSong.play()
   unfade(haikuLines)
-  instructions.style.visibility !== "hidden" ? instructions.style.visibility = "hidden" : instructions.style.visibility = "visible"; 
+  arrowIcon.style.visibility = 'hidden';
 });
 
 questionIcon.addEventListener('click', ()=> {

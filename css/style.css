@@ -57,6 +57,7 @@ body {
   grid-column-start: 1;
   position: absolute; 
   margin: 2px 0px 0px 179px;
+  visibility: visible; 
 }
 
 .round-box {
