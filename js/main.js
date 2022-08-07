@@ -6,7 +6,7 @@ const feetSong = new Audio('FEET.mp4')
 const instructions = document.querySelector('.instructions');
 const haikuLines = document.querySelector('.haiku-lines')
 const arrowIcon = document.querySelector('#arrow-icon');
-console.log(arrowIcon);
+const questionIcon = document.querySelector('#question-icon');
 
 //cached variables
 //create new variable that stores current line value
@@ -19,8 +19,11 @@ let line = document.querySelectorAll('.list-group-item');
 //event listeners 
 arrowIcon.addEventListener('click', ()=> {
   feetSong.play()
-  unfade(haikuLines);
-  // haikuLines.style.visibility ="visible";
+  unfade(haikuLines)
+  instructions.style.visibility !== "hidden" ? instructions.style.visibility = "hidden" : instructions.style.visibility = "visible"; 
+});
+
+questionIcon.addEventListener('click', ()=> {
   instructions.style.visibility !== "hidden" ? instructions.style.visibility = "hidden" : instructions.style.visibility = "visible"; 
 });
 
@@ -49,7 +52,7 @@ for(i = 0; i < line.length; i++) {
 
 //fade in function 
 function unfade(element) {
-  var op = 0.01;  // initial opacity
+  var op = 0.05;  // initial opacity
   element.style.display = 'block';
   var timer = setInterval(function () {
       if (op >= 1){
@@ -58,7 +61,7 @@ function unfade(element) {
       element.style.opacity = op;
       element.style.filter = 'alpha(opacity=' + op * 100 + ")";
       op += op * 0.05;
-  }, 175);
+  }, 85);
 }
 
 

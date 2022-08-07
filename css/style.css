@@ -51,6 +51,14 @@ body {
   position: absolute; 
 }
 
+#question-icon {
+  display: flex;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  position: absolute; 
+  margin: 2px 0px 0px 179px;
+}
+
 .round-box {
   grid-row-start: 1;
   color: rgb(21, 19, 19); 
