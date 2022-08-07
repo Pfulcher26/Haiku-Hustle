@@ -6,9 +6,9 @@ arrowIcon.addEventListener('click', ()=> {
 });
 
 let line = document.querySelectorAll('.list-group-item');
-line.forEach((element) => {
-  element.addEventListener('click', function(){
-    console.log('click')
+line.forEach((el) => {
+  el.addEventListener('click', function(){
+    !el.classList.contains('active') ? el.classList.add('active'): el.classList.remove('active');  
   })
 });
 

@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 
-
 .haiku-lines {
   grid-row-start: 1;
   grid-column-start: 2; 
@@ -12,7 +11,7 @@
   z-index: 1; 
   display: flex; 
   justify-content: left;
-  margin: 270px 270px;  
+  margin: 310px 270px 0px auto;  
 }
 
 .list-group-item {
