@@ -12,6 +12,7 @@
   display: flex; 
   justify-content: left;
   margin: 310px 270px 0px auto;  
+  visibility: hidden;
 }
 
 .list-group-item {

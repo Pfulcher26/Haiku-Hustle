@@ -2,6 +2,8 @@ let arrowIcon = document.querySelector('#arrow-icon');
 console.log(arrowIcon);
 arrowIcon.addEventListener('click', ()=> {
   let instructions = document.querySelector('.instructions');
+  let haikuLines = document.querySelector('.haiku-lines')
+  haikuLines.style.visibility ="visible";
   instructions.style.visibility !== "hidden" ? instructions.style.visibility = "hidden" : instructions.style.visibility = "visible"; 
 });
 
