@@ -18,18 +18,18 @@ for(i = 0; i < line.length; i++) {
   let currentElement = line[i] 
   line[i].addEventListener('click', function(){
     if (lineHTML === "") {
+      currentElement.classList.add('disabled')
       lineHTML = currentElement.innerHTML;
       previousIndex = currentElement
     } else {
       lineHTML !== currentElement.innerHTML 
       previousIndex.innerHTML = currentElement.innerHTML 
+      previousIndex.classList.remove('disabled')
       currentElement.innerHTML = lineHTML;
       lineHTML = ""
     } 
   });
 }
-// currentElement.classList.add('disabled')
-// previousIndex.classList.remove('disabled')
 
 
 
