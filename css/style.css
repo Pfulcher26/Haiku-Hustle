@@ -10,13 +10,14 @@
   font-size: 1rem; 
   z-index: 1; 
   display: flex; 
-  justify-content: left;
+  justify-content: left;  
   margin: 310px 270px 0px auto;  
-  visibility: hidden;
+  opacity: 0;
+  /* visibility: hidden; */
 }
 
 .list-group-item {
-  border: solid goldenrod 2px; 
+  border: solid rgb(255, 255, 255) 2px; 
   display: flex; 
   justify-content: center; 
   width: 250px;
@@ -24,11 +25,11 @@
 }
 
 body {
-  margin: 50px;
   font-family: Helvetica;
   display: flex; 
   justify-content: center;
   background-color: bisque;
+  margin: 100px;
 }
 
 .outer-container {

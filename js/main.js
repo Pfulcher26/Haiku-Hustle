@@ -19,7 +19,8 @@ let line = document.querySelectorAll('.list-group-item');
 //event listeners 
 arrowIcon.addEventListener('click', ()=> {
   feetSong.play()
-  haikuLines.style.visibility ="visible";
+  unfade(haikuLines);
+  // haikuLines.style.visibility ="visible";
   instructions.style.visibility !== "hidden" ? instructions.style.visibility = "hidden" : instructions.style.visibility = "visible"; 
 });
 
@@ -31,7 +32,7 @@ for(i = 0; i < line.length; i++) {
     if (lineHTML === "") {
       clickSound.play()
       currentElement.style.background = 'goldenrod'; 
-      currentElement.classList.add('disabled')
+      currentElement.classList.add('disabled');
       lineHTML = currentElement.innerHTML;
       previousIndex = currentElement
     } else {
@@ -44,6 +45,20 @@ for(i = 0; i < line.length; i++) {
       lineHTML = ""
     } 
   });
+}
+
+//fade in function 
+function unfade(element) {
+  var op = 0.01;  // initial opacity
+  element.style.display = 'block';
+  var timer = setInterval(function () {
+      if (op >= 1){
+          clearInterval(timer);
+      }
+      element.style.opacity = op;
+      element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+      op += op * 0.05;
+  }, 175);
 }
 
 
@@ -68,6 +83,4 @@ for(i = 0; i < line.length; i++) {
 
 //establish a way to select the content of the line 
 // console.log(line[0].innerHTML)
-
-
 
