@@ -5,6 +5,7 @@
 const clickSound = new Audio('click.wav');
 const clickSoundTwo = new Audio('click2.wav');
 const clickSoundThree = new Audio('click3.wav');
+const victorySound = new Audio('victory.wav');
 const feetSong = new Audio('FEET.mp4');
 const instructions = document.querySelector('.instructions');
 const haikuLines = document.querySelector('.haiku-lines')
@@ -124,7 +125,9 @@ submit.addEventListener('click', determineWinner);
 
 function determineWinner() {
   clickSound.play()
-  if(round === 5) {
+  if(round === 4) {
+    feetSong.pause()
+    victorySound.play()
     fade(haikuLines)
     resultBox.innerHTML = `You have reached the end.  You solved ${score} haiku.  Breathe deep and ascend.`
   } else {
