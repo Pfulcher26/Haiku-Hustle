@@ -58,6 +58,7 @@ submit.addEventListener('click', ()=>{
 //functions 
 //loops through every element in the selected group and attaches event listeners
 for(i = 0; i < line.length; i++) {
+
   let currentElement = line[i] 
   line[i].addEventListener('click', function(){
     if (lineHTML === "") {
@@ -96,22 +97,6 @@ function unfade(element) {
   }, 85);
 }
 
-
-
-// line.forEach((el, index) => {
-//   el.addEventListener('click', function(){
-//     if (lineHTML === "") {
-//       lineHTML = el.innerHTML;
-//       previousIndex = el[index]
-//     } else {
-//       lineHTML !== el.innerHTML 
-//       el.innerHTML = lineHTML;
-//       previousIndex = el.innerHTML 
-//       lineHTML = ""
-//     } 
-//     // !el.classList.contains('active') ? el.classList.add('active'): el.classList.remove('active');  
-//   })
-// });
 
 
 
