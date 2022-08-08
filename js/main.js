@@ -1,8 +1,9 @@
 
 //state variables 
-const clickSound = new Audio('click.wav')
-const clickSoundTwo = new Audio('click2.wav')
-const feetSong = new Audio('FEET.mp4')
+const clickSound = new Audio('click.wav');
+const clickSoundTwo = new Audio('click2.wav');
+const clickSoundThree = new Audio('click3.wav');
+const feetSong = new Audio('FEET.mp4');
 const instructions = document.querySelector('.instructions');
 const haikuLines = document.querySelector('.haiku-lines')
 const arrowIcon = document.querySelector('#arrow-icon');
@@ -25,8 +26,9 @@ arrowIcon.addEventListener('click', ()=> {
 
 questionIcon.addEventListener('click', ()=> {
   instructions.style.visibility !== "hidden" ? instructions.style.visibility = "hidden" : instructions.style.visibility = "visible"; 
+  clickSoundThree.play();
 });
-
+ 
 //functions 
 //loops through every element in the selected group and attaches event listeners
 for(i = 0; i < line.length; i++) {
@@ -65,6 +67,21 @@ function unfade(element) {
 }
 
 
+console.log(line[0].id)
+//check for winner
+// submit.addEventListener('click', ()=>{
+//   for(let i=0; i<line.length; i++){
+//     let counter = 1
+//     if(line[i].id === i){
+//       counter += 1 
+//       if(counter === 3) {
+//         console.log('win');
+//       } else {
+//       console.log('lose')
+//     }
+//   }
+// }
+// });
 
 // line.forEach((el, index) => {
 //   el.addEventListener('click', function(){
