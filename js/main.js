@@ -2,12 +2,15 @@
 
 
 //state variables 
+//sounds
 const clickSound = new Audio('click.wav');
 const clickSoundTwo = new Audio('click2.wav');
 const clickSoundThree = new Audio('click3.wav');
 const victorySound = new Audio('victory.wav');
 const yesSound = new Audio('yes.wav')
 const feetSong = new Audio('FEET.mp4');
+const ohNo = new Audio('ohno.wav')
+//DOM
 const instructions = document.querySelector('.instructions');
 const haikuLines = document.querySelector('.haiku-lines')
 const arrowIcon = document.querySelector('#arrow-icon');
@@ -148,23 +151,6 @@ let rendBoardCounter = 0;
 let shuffledArray = shuffle(haikuArray); 
 let shuffledInnerArrays = shuffledArray.map(array => shuffle(array));
 
-function init() {
-lineHTML= ""
-previousIndex = ""
-round = 0;
-roundBox.innerHTML = round;
-score = 0 
-scoreBox.innerHTML = score; 
-rendBoardCounter = 0; 
-resultBox.innerHTML = "";
-shuffledArray = shuffle(haikuArray);
-shuffledInnerArrays = shuffledArray.map(array => shuffle(array));
-rendBoard();
-resetIcon.style.visibility = "hidden";
-arrowIcon.style.visibility = "visible";
-feetSong.stop()
-}
-
 //event listeners 
 arrowIcon.addEventListener('click', ()=> {
   feetSong.play();
@@ -213,6 +199,7 @@ function determineWinner() {
     rendBoard()
   } else {
     console.log('lose')
+    ohNo.play();
     round += 1;
     roundBox.innerHTML = round; 
     rendBoardCounter += 1
@@ -222,6 +209,23 @@ function determineWinner() {
 };
 
 //functions 
+function init() {
+  lineHTML= ""
+  previousIndex = ""
+  round = 0;
+  roundBox.innerHTML = round;
+  score = 0 
+  scoreBox.innerHTML = score; 
+  rendBoardCounter = 0; 
+  resultBox.innerHTML = "";
+  shuffledArray = shuffle(haikuArray);
+  shuffledInnerArrays = shuffledArray.map(array => shuffle(array));
+  rendBoard();
+  resetIcon.style.visibility = "hidden";
+  arrowIcon.style.visibility = "visible";
+  feetSong.stop()
+  }
+
 //loops through every element in the selected group and attaches event listeners
 for(i = 0; i < line.length; i++) {
   let currentElement = line[i] 
