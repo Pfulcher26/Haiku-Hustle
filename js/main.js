@@ -19,71 +19,71 @@ const haikuArray = [
   [
     {
     "line": "Oh, tranquility!",
-    "id": 1
+    "id": 0
   },
   { 
     "line": "Penetrating the very rock",
-    "id": 2
+    "id": 1
   },
   {
     "line": "A cicada's voice",
-    "id": 3
+    "id": 2
   }
 ],
 [
   {
     "line": "Even in Kyoto",
-    "id": 1
+    "id": 0
   },
   { 
     "line": "Hearing the cuckoo's cry",
-    "id": 2
+    "id": 1
   },
   {
     "line": "I long for Kyoto",
-    "id": 3
+    "id": 2
   }
 ],
 [
   {
     "line": "The rains join together",
-    "id": 1
+    "id": 0
   },
   { 
     "line": "How swift it is",
-    "id": 2
+    "id": 1
   },
   {
     "line": "Mogami River",
-    "id": 3
+    "id": 2
   }
 ],
 [
   {
     "line": "A world of dew",
-    "id": 1
+    "id": 0
   },
   { 
     "line": "And within every dewdrop",
-    "id": 2
+    "id": 1
   },
   {
     "line": "A world of struggle",
-    "id": 3
+    "id": 2
   }
 ],
 [
   {
     "line": "The light of a candle",
-    "id": 1
+    "id": 0
   },
   { 
     "line": "Is transferred to another candle",
-    "id": 2
+    "id": 1
   },
   {
     "line": "Spring Twilight",
-    "id": 3
+    "id": 2
   }
 ]
 ]
@@ -97,6 +97,7 @@ let previousIndex = ""
 let line = document.querySelectorAll('.list-group-item');
 let round = 0
 let score = 0 
+let rendBoardCounter = 0; 
 //shuffle array of arrays
 let shuffledArray = shuffle(haikuArray) 
 let shuffledInnerArrays = shuffledArray.map(array => shuffle(array))
@@ -117,31 +118,37 @@ questionIcon.addEventListener('click', ()=> {
 
 //can make the checkForWinner function separate 
 //line at index isn't working
-submit.addEventListener('click', ()=>{
+submit.addEventListener('click', determineWinner); 
+
+
+function determineWinner() {
   clickSound.play()
-  // let line = document.querySelectorAll('.list-group-item');
   let array = []
   for(let i=0; i<line.length; i++){
     array.push(line[i].id)
   } 
-  if(array.toString() === "0,1,2"){
+  let arrayString = array.toString()
+  if(arrayString === "0,1,2"){
+    console.log('win')
     round += 1;
     roundBox.innerHTML = round; 
-    score += 1; 
+    score += 1
     scoreBox.innerText = score; 
+    rendBoardCounter += 1
     rendBoard()
   } else {
+    console.log('lose')
     round += 1;
     roundBox.innerHTML = round; 
+    rendBoardCounter += 1
     rendBoard()
-  };
-});
+  }
+};
 
 //functions 
 //loops through every element in the selected group and attaches event listeners
 for(i = 0; i < line.length; i++) {
   let currentElement = line[i] 
-  console.log(line[i])
   line[i].addEventListener('click', function(){
     if (lineHTML === "") {
       clickSound.play()
@@ -207,12 +214,11 @@ function shuffle(array) {
   return array;
 }
 
-
 // rendboard function
 function rendBoard() {
   for(let i=0; i<line.length; i++){
-    line[i].id = shuffledInnerArrays[0][i].id;
-    line[i].innerHTML = shuffledInnerArrays[0][i].line; 
+    line[i].id = shuffledInnerArrays[rendBoardCounter][i].id;
+    line[i].innerHTML = shuffledInnerArrays[rendBoardCounter][i].line; 
   }
 }
 
