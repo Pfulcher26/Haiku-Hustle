@@ -1,4 +1,6 @@
 
+
+
 //state variables 
 const clickSound = new Audio('click.wav');
 const clickSoundTwo = new Audio('click2.wav');
@@ -44,7 +46,7 @@ const haikuArray = [
 ],
 [
   {
-    "line": "The rains of summer join together",
+    "line": "The rains join together",
     "id": 1
   },
   { 
@@ -95,7 +97,10 @@ let previousIndex = ""
 let line = document.querySelectorAll('.list-group-item');
 let round = 0
 let score = 0 
-
+//shuffle array of arrays
+let shuffledArray = shuffle(haikuArray) 
+let shuffledInnerArrays = shuffledArray.map(array => shuffle(array))
+// console.log(shuffledInnerArrays)
 
 
 //event listeners 
@@ -111,8 +116,10 @@ questionIcon.addEventListener('click', ()=> {
 });
 
 //can make the checkForWinner function separate 
+//line at index isn't working
 submit.addEventListener('click', ()=>{
   clickSound.play()
+  // let line = document.querySelectorAll('.list-group-item');
   let array = []
   for(let i=0; i<line.length; i++){
     array.push(line[i].id)
@@ -122,17 +129,19 @@ submit.addEventListener('click', ()=>{
     roundBox.innerHTML = round; 
     score += 1; 
     scoreBox.innerText = score; 
+    rendBoard()
   } else {
     round += 1;
     roundBox.innerHTML = round; 
+    rendBoard()
   };
 });
- 
+
 //functions 
 //loops through every element in the selected group and attaches event listeners
 for(i = 0; i < line.length; i++) {
-
   let currentElement = line[i] 
+  console.log(line[i])
   line[i].addEventListener('click', function(){
     if (lineHTML === "") {
       clickSound.play()
@@ -182,25 +191,29 @@ function unfade(element) {
 
 
 
+//board render function 
+
 //Array shuffle function 
 function shuffle(array) {
   let currentIndex = array.length,  randomIndex;
-
   // While there remain elements to shuffle.
   while (currentIndex != 0) {
-
     // Pick a remaining element.
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
-
-    // And swap it with the current element.
     [array[currentIndex], array[randomIndex]] = [
       array[randomIndex], array[currentIndex]];
   }
-
   return array;
 }
 
-let shuffledArray = shuffle(haikuArray) 
-let shuffledInnerArrays = shuffledArray.map(array => shuffle(array))
 
+// rendboard function
+function rendBoard() {
+  for(let i=0; i<line.length; i++){
+    line[i].id = shuffledInnerArrays[0][i].id;
+    line[i].innerHTML = shuffledInnerArrays[0][i].line; 
+  }
+}
+
+//if round === 10, end game 
