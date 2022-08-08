@@ -155,4 +155,5 @@ body {
   margin: 622px 0px 0px 60px;
   z-index: 1;
   position: absolute; 
+  opacity: 0;
 }

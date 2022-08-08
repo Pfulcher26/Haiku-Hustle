@@ -34,15 +34,15 @@ const haikuArray = [
 ],
 [
   {
-    "line": "Even in Kyoto",
+    "line": "Period",
     "id": 0
   },
   { 
-    "line": "Hearing the cuckoo's cry",
+    "line": "One blue egg all summer long",
     "id": 1
   },
   {
-    "line": "I long for Kyoto",
+    "line": "Now gone",
     "id": 2
   }
 ],
@@ -108,8 +108,9 @@ let shuffledInnerArrays = shuffledArray.map(array => shuffle(array))
 
 //event listeners 
 arrowIcon.addEventListener('click', ()=> {
-  feetSong.play()
-  unfade(haikuLines)
+  feetSong.play();
+  unfade(submit);
+  unfade(haikuLines);
   arrowIcon.style.visibility = 'hidden';
 });
 
