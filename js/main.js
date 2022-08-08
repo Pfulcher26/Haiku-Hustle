@@ -13,6 +13,7 @@ const questionIcon = document.querySelector('#question-icon');
 const submit = document.querySelector('#seal')
 const roundBox = document.querySelector('.round-box')
 const scoreBox = document.querySelector('#score')
+const resultBox = document.querySelector('#result')
 //Creates a nested array where the inner arrays contains objects with key
 //value pairs that petain to the haiku line and id associated with the line
 const haikuArray = [
@@ -123,7 +124,11 @@ submit.addEventListener('click', determineWinner);
 
 function determineWinner() {
   clickSound.play()
-  let array = []
+  if(round === 5) {
+    fade(haikuLines)
+    resultBox.innerHTML = `You have reached the end.  You solved ${score} haiku.  Breathe deep and ascend.`
+  } else {
+    let array = []
   for(let i=0; i<line.length; i++){
     array.push(line[i].id)
   } 
@@ -142,6 +147,7 @@ function determineWinner() {
     roundBox.innerHTML = round; 
     rendBoardCounter += 1
     rendBoard()
+  }
   }
 };
 
@@ -184,6 +190,20 @@ function unfade(element) {
       element.style.filter = 'alpha(opacity=' + op * 100 + ")";
       op += op * 0.05;
   }, 85);
+}
+
+//fade out function 
+function fade(element) {
+  var op = .05;  // initial opacity
+  var timer = setInterval(function () {
+      if (op <= 1){
+          clearInterval(timer);
+          element.style.display = 'none';
+      }
+      element.style.opacity = op;
+      element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+      op -= op * 0.05;
+  }, 50);
 }
 
 

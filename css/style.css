@@ -120,6 +120,20 @@ body {
   margin: 359px 30px 20px 560px;  
 }
 
+#result {
+  grid-row-start: last-line;
+  grid-column-start: 2; 
+  color: white; 
+  font-family: 'righteous'; 
+  font-style: bold; 
+  font-size: 1.3rem; 
+  z-index: 1; 
+  display: flex; 
+  justify-content: right;
+  width: 50%;
+  margin: 225px 380px 20px 300px;  
+}
+
 .inner-right-container {
   display:flex;
   flex-flow: column nowrap;
