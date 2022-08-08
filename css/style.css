@@ -59,7 +59,7 @@ body {
   grid-row-start: 1;
   grid-column-start: 1;
   position: absolute; 
-  margin: 2px 0px 0px 137px;
+  margin: 4px 0px 0px 137px;
   visibility: visible; 
   z-index: 1;
 }
@@ -86,7 +86,7 @@ body {
   font-size: 1rem; 
   z-index: 1; 
   display: flex; 
-  margin: 25px 30px 30px 50px; 
+  margin: 25px 30px 30px 70px; 
   position: absolute; 
   width: 100px; 
   visibility: hidden;

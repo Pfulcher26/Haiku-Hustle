@@ -6,6 +6,7 @@ const clickSound = new Audio('click.wav');
 const clickSoundTwo = new Audio('click2.wav');
 const clickSoundThree = new Audio('click3.wav');
 const victorySound = new Audio('victory.wav');
+const yesSound = new Audio('yes.wav')
 const feetSong = new Audio('FEET.mp4');
 const instructions = document.querySelector('.instructions');
 const haikuLines = document.querySelector('.haiku-lines')
@@ -87,6 +88,48 @@ const haikuArray = [
     "line": "Spring Twilight",
     "id": 2
   }
+],
+[
+  {
+    "line": "The apparition of these",
+    "id": 0
+  },
+  { 
+    "line": "Faces in the crowd",
+    "id": 1
+  },
+  {
+    "line": "Petals on a wet black bough",
+    "id": 2
+  }
+],
+[
+  {
+    "line": "Quietly, quietly",
+    "id": 0
+  },
+  { 
+    "line": "Yellow mountain roses fall",
+    "id": 1
+  },
+  {
+    "line": "Sound of the rapids",
+    "id": 2
+  }
+],
+[
+  {
+    "line": "The first cold shower",
+    "id": 0
+  },
+  { 
+    "line": "Even the monkey seems to want",
+    "id": 1
+  },
+  {
+    "line": "A little coat of straw",
+    "id": 2
+  }
 ]
 ]
 
@@ -123,8 +166,8 @@ submit.addEventListener('click', determineWinner);
 //functions
 function determineWinner() {
   clickSound.play()
-  if(round === 4) {
-    submit.style.visibility = "hidden"
+  if(round === 7) {
+    submit.style.visibility = "hidden";
     round += 1;
     roundBox.innerHTML = round; 
     feetSong.pause()
@@ -139,6 +182,7 @@ function determineWinner() {
   let arrayString = array.toString()
   if(arrayString === "0,1,2"){
     console.log('win')
+    yesSound.play()
     round += 1;
     roundBox.innerHTML = round; 
     score += 1
