@@ -145,17 +145,34 @@ let round = 0
 let score = 0 
 let rendBoardCounter = 0; 
 //shuffle array of arrays
-let shuffledArray = shuffle(haikuArray) 
-let shuffledInnerArrays = shuffledArray.map(array => shuffle(array))
+let shuffledArray = shuffle(haikuArray); 
+let shuffledInnerArrays = shuffledArray.map(array => shuffle(array));
 
+function init() {
+lineHTML= ""
+previousIndex = ""
+round = 0;
+roundBox.innerHTML = round;
+score = 0 
+scoreBox.innerHTML = score; 
+rendBoardCounter = 0; 
+resultBox.innerHTML = "";
+shuffledArray = shuffle(haikuArray);
+shuffledInnerArrays = shuffledArray.map(array => shuffle(array));
+rendBoard();
+resetIcon.style.visibility = "hidden";
+arrowIcon.style.visibility = "visible";
+feetSong.stop()
+}
 
 //event listeners 
 arrowIcon.addEventListener('click', ()=> {
   feetSong.play();
-  resetIcon.style.visibility = "visible";
   unfade(submit);
   unfade(haikuLines);
   arrowIcon.style.visibility = 'hidden';
+  submit.style.opacity = 0;
+  submit.style.visibility = "visible";
 });
 
 questionIcon.addEventListener('click', ()=> {
@@ -165,10 +182,13 @@ questionIcon.addEventListener('click', ()=> {
 
 submit.addEventListener('click', determineWinner); 
 
+resetIcon.addEventListener('click', init)
+
 //functions
 function determineWinner() {
   clickSound.play()
   if(round === 7) {
+    resetIcon.style.visibility = "visible";
     submit.style.visibility = "hidden";
     round += 1;
     roundBox.innerHTML = round; 
