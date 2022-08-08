@@ -13,6 +13,9 @@
   justify-content: left;  
   margin: 310px 270px 0px auto;  
   opacity: 0;
+  border: solid gold 2px;
+  width: 254px;
+  height: 132px;
   /* visibility: hidden; */
 }
 

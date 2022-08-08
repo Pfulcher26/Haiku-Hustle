@@ -8,6 +8,11 @@ const instructions = document.querySelector('.instructions');
 const haikuLines = document.querySelector('.haiku-lines')
 const arrowIcon = document.querySelector('#arrow-icon');
 const questionIcon = document.querySelector('#question-icon');
+const submit = document.querySelector('#seal')
+const roundBox = document.querySelector('.round-box')
+const scoreBox = document.querySelector('#score')
+
+
 
 //cached variables
 //create new variable that stores current line value
@@ -16,6 +21,10 @@ let lineHTML= ""
 //places
 let previousIndex = ""
 let line = document.querySelectorAll('.list-group-item');
+let round = 0
+let score = 0 
+
+
 
 //event listeners 
 arrowIcon.addEventListener('click', ()=> {
@@ -27,6 +36,23 @@ arrowIcon.addEventListener('click', ()=> {
 questionIcon.addEventListener('click', ()=> {
   instructions.style.visibility !== "hidden" ? instructions.style.visibility = "hidden" : instructions.style.visibility = "visible"; 
   clickSoundThree.play();
+});
+
+submit.addEventListener('click', ()=>{
+  clickSound.play()
+  let array = []
+  for(let i=0; i<line.length; i++){
+    array.push(line[i].id)
+  } 
+  if(array.toString() === "0,1,2"){
+    round += 1;
+    roundBox.innerHTML = round; 
+    score += 1; 
+    scoreBox.innerText = score; 
+  } else {
+    round += 1;
+    roundBox.innerHTML = round; 
+  };
 });
  
 //functions 
@@ -40,6 +66,8 @@ for(i = 0; i < line.length; i++) {
       currentElement.classList.add('disabled');
       lineHTML = currentElement.innerHTML;
       previousIndex = currentElement
+      previousID = currentElement.id 
+      previousElement = currentElement
     } else {
       clickSoundTwo.play()
       previousIndex.style.background = 'white';
@@ -47,6 +75,8 @@ for(i = 0; i < line.length; i++) {
       lineHTML !== currentElement.innerHTML 
       previousIndex.innerHTML = currentElement.innerHTML 
       currentElement.innerHTML = lineHTML;
+      previousElement.id = currentElement.id
+      currentElement.id = previousID
       lineHTML = ""
     } 
   });
@@ -67,21 +97,6 @@ function unfade(element) {
 }
 
 
-console.log(line[0].id)
-//check for winner
-// submit.addEventListener('click', ()=>{
-//   for(let i=0; i<line.length; i++){
-//     let counter = 1
-//     if(line[i].id === i){
-//       counter += 1 
-//       if(counter === 3) {
-//         console.log('win');
-//       } else {
-//       console.log('lose')
-//     }
-//   }
-// }
-// });
 
 // line.forEach((el, index) => {
 //   el.addEventListener('click', function(){
