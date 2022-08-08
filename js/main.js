@@ -11,8 +11,80 @@ const questionIcon = document.querySelector('#question-icon');
 const submit = document.querySelector('#seal')
 const roundBox = document.querySelector('.round-box')
 const scoreBox = document.querySelector('#score')
-
-
+//Creates a nested array where the inner arrays contains objects with key
+//value pairs that petain to the haiku line and id associated with the line
+const haikuArray = [
+  [
+    {
+    "line": "Oh, tranquility!",
+    "id": 1
+  },
+  { 
+    "line": "Penetrating the very rock",
+    "id": 2
+  },
+  {
+    "line": "A cicada's voice",
+    "id": 3
+  }
+],
+[
+  {
+    "line": "Even in Kyoto",
+    "id": 1
+  },
+  { 
+    "line": "Hearing the cuckoo's cry",
+    "id": 2
+  },
+  {
+    "line": "I long for Kyoto",
+    "id": 3
+  }
+],
+[
+  {
+    "line": "The rains of summer join together",
+    "id": 1
+  },
+  { 
+    "line": "How swift it is",
+    "id": 2
+  },
+  {
+    "line": "Mogami River",
+    "id": 3
+  }
+],
+[
+  {
+    "line": "A world of dew",
+    "id": 1
+  },
+  { 
+    "line": "And within every dewdrop",
+    "id": 2
+  },
+  {
+    "line": "A world of struggle",
+    "id": 3
+  }
+],
+[
+  {
+    "line": "The light of a candle",
+    "id": 1
+  },
+  { 
+    "line": "Is transferred to another candle",
+    "id": 2
+  },
+  {
+    "line": "Spring Twilight",
+    "id": 3
+  }
+]
+]
 
 //cached variables
 //create new variable that stores current line value
@@ -38,6 +110,7 @@ questionIcon.addEventListener('click', ()=> {
   clickSoundThree.play();
 });
 
+//can make the checkForWinner function separate 
 submit.addEventListener('click', ()=>{
   clickSound.play()
   let array = []
@@ -99,7 +172,10 @@ function unfade(element) {
 
 
 
-
+//make an array of objects for haikus, potentially create a class
+//object, should have id's, sort them, loop over lines,
+//and either create new elements, or replace the old ids
+//and innerHTML 
 
 //establish a way to select the content of the line 
 // console.log(line[0].innerHTML)
