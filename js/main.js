@@ -124,6 +124,9 @@ submit.addEventListener('click', determineWinner);
 function determineWinner() {
   clickSound.play()
   if(round === 4) {
+    submit.style.visibility = "hidden"
+    round += 1;
+    roundBox.innerHTML = round; 
     feetSong.pause()
     victorySound.play()
     fade(haikuLines)
