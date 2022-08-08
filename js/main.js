@@ -12,10 +12,11 @@ const instructions = document.querySelector('.instructions');
 const haikuLines = document.querySelector('.haiku-lines')
 const arrowIcon = document.querySelector('#arrow-icon');
 const questionIcon = document.querySelector('#question-icon');
-const submit = document.querySelector('#seal')
-const roundBox = document.querySelector('.round-box')
-const scoreBox = document.querySelector('#score')
-const resultBox = document.querySelector('#result')
+const resetIcon = document.querySelector('#reset');
+const submit = document.querySelector('#seal');
+const roundBox = document.querySelector('.round-box');
+const scoreBox = document.querySelector('#score');
+const resultBox = document.querySelector('#result');
 //Creates a nested array where the inner arrays contains objects with key
 //value pairs that petain to the haiku line and id associated with the line
 const haikuArray = [
@@ -151,6 +152,7 @@ let shuffledInnerArrays = shuffledArray.map(array => shuffle(array))
 //event listeners 
 arrowIcon.addEventListener('click', ()=> {
   feetSong.play();
+  resetIcon.style.visibility = "visible";
   unfade(submit);
   unfade(haikuLines);
   arrowIcon.style.visibility = 'hidden';
