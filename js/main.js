@@ -134,6 +134,48 @@ const haikuArray = [
     "line": "A little coat of straw",
     "id": 2
   }
+],
+[
+  {
+    "line": "Old pond",
+    "id": 0
+  },
+  { 
+    "line": "Frog leaps in",
+    "id": 1
+  },
+  {
+    "line": "Water's sound",
+    "id": 2
+  }
+],
+[
+  {
+    "line": "The wind of mt fuji",
+    "id": 0
+  },
+  { 
+    "line": "I've brought on my fan",
+    "id": 1
+  },
+  {
+    "line": "A gift from Edo",
+    "id": 2
+  }
+],
+[
+  {
+    "line": "Of Edo's rain",
+    "id": 0
+  },
+  { 
+    "line": "How many mouths did you drink",
+    "id": 1
+  },
+  {
+    "line": "Cuckoo",
+    "id": 2
+  }
 ]
 ]
 
@@ -144,7 +186,7 @@ let lineHTML= ""
 //places
 let previousIndex = ""
 let line = document.querySelectorAll('.list-group-item');
-let round = 0
+let round = 1
 let score = 0 
 let rendBoardCounter = 0; 
 //shuffle array of arrays
@@ -173,22 +215,19 @@ resetIcon.addEventListener('click', init)
 //functions
 function determineWinner() {
   clickSound.play()
-  if(round === 7) {
-    resetIcon.style.visibility = "visible";
-    submit.style.visibility = "hidden";
-    round += 1;
-    roundBox.innerHTML = round; 
-    feetSong.pause()
-    victorySound.play()
-    fade(haikuLines)
-    resultBox.innerHTML = `You have reached the end.  You solved ${score} haiku.  Breathe deep and ascend.`
-  } else {
     let array = []
   for(let i=0; i<line.length; i++){
     array.push(line[i].id)
   } 
   let arrayString = array.toString()
-  if(arrayString === "0,1,2"){
+  if(arrayString === "0,1,2" && round === haikuArray.length || round === haikuArray.length){
+      resetIcon.style.visibility = "visible";
+      submit.style.visibility = "hidden";
+      feetSong.pause()
+      victorySound.play()
+      fade(haikuLines)
+      resultBox.innerHTML = `You have reached the end.  You solved ${score} haiku.  Breathe deep and ascend.`
+    } else if(arrayString === "0,1,2"){
     console.log('win')
     yesSound.play()
     round += 1;
@@ -204,7 +243,6 @@ function determineWinner() {
     roundBox.innerHTML = round; 
     rendBoardCounter += 1
     rendBoard()
-  }
   }
 };
 
@@ -223,7 +261,6 @@ function init() {
   rendBoard();
   resetIcon.style.visibility = "hidden";
   arrowIcon.style.visibility = "visible";
-  feetSong.stop()
   }
 
 //loops through every element in the selected group and attaches event listeners
