@@ -103,7 +103,6 @@ let rendBoardCounter = 0;
 //shuffle array of arrays
 let shuffledArray = shuffle(haikuArray) 
 let shuffledInnerArrays = shuffledArray.map(array => shuffle(array))
-// console.log(shuffledInnerArrays)
 
 
 //event listeners 
@@ -119,11 +118,9 @@ questionIcon.addEventListener('click', ()=> {
   clickSoundThree.play();
 });
 
-//can make the checkForWinner function separate 
-//line at index isn't working
 submit.addEventListener('click', determineWinner); 
 
-
+//functions
 function determineWinner() {
   clickSound.play()
   if(round === 4) {
@@ -182,6 +179,28 @@ for(i = 0; i < line.length; i++) {
   });
 }
 
+//Array shuffle function 
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+  return array;
+}
+
+// rendboard function
+function rendBoard() {
+  for(let i=0; i<line.length; i++){
+    line[i].id = shuffledInnerArrays[rendBoardCounter][i].id;
+    line[i].innerHTML = shuffledInnerArrays[rendBoardCounter][i].line; 
+  }
+}
+
 //fade in function 
 function unfade(element) {
   var op = 0.05;  // initial opacity
@@ -209,41 +228,3 @@ function fade(element) {
       op -= op * 0.05;
   }, 50);
 }
-
-
-
-//make an array of objects for haikus, potentially create a class
-//object, should have id's, sort them, loop over lines,
-//and either create new elements, or replace the old ids
-//and innerHTML 
-
-//establish a way to select the content of the line 
-// console.log(line[0].innerHTML)
-
-
-
-//board render function 
-
-//Array shuffle function 
-function shuffle(array) {
-  let currentIndex = array.length,  randomIndex;
-  // While there remain elements to shuffle.
-  while (currentIndex != 0) {
-    // Pick a remaining element.
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
-  }
-  return array;
-}
-
-// rendboard function
-function rendBoard() {
-  for(let i=0; i<line.length; i++){
-    line[i].id = shuffledInnerArrays[rendBoardCounter][i].id;
-    line[i].innerHTML = shuffledInnerArrays[rendBoardCounter][i].line; 
-  }
-}
-
-//if round === 10, end game 
