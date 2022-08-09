@@ -181,9 +181,10 @@ const haikuArray = [
 ]
 ]
 
-const haikuTriviaArray = [
-  "Haiku consist of three phrases that contain a 'kireji', or cutting word, 17 'on' in a 5,6,5 pattern, and a 'kigo', or seasonal reference.",
-
+const questionButtonArray = [
+  "Click to start",
+  "Arrange the lines in proper order, but be careful, you only have once chance at perfection",
+  "Haiku consist of three phrases that contain a 'kireji', or cutting word, 17 'on' in a 5,6,5 pattern, and a 'kigo', or seasonal reference."
 ]
 
 //cached variables
@@ -215,6 +216,18 @@ arrowIcon.addEventListener('click', ()=> {
 questionIcon.addEventListener('click', ()=> {
   instructions.style.visibility !== "hidden" ? instructions.style.visibility = "hidden" : instructions.style.visibility = "visible"; 
   clickSoundThree.play();
+});
+
+muteIcon.addEventListener('click', ()=> {
+  feetSong.pause()
+  muteIcon.style.visibility = "hidden";
+  unMuteIcon.style.visibility = "visible";
+});
+
+unMuteIcon.addEventListener('click', ()=> {
+  feetSong.play()
+  unMuteIcon.style.visibility = "hidden";
+  muteIcon.style.visibility = "visible";
 });
 
 submit.addEventListener('click', determineWinner); 

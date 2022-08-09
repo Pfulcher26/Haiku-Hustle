@@ -177,12 +177,14 @@ body {
 #mute{
   position: absolute;
   margin: 680px 1px 1px 10px;
+  cursor: pointer;
 }
 
 #un-mute{
   position: absolute;
   margin: 680px 1px 1px 10px;
   visibility: hidden;
+  cursor: pointer;
 }
 
 
