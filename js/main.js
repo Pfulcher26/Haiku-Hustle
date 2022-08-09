@@ -179,6 +179,11 @@ const haikuArray = [
 ]
 ]
 
+const haikuTriviaArray = [
+  "Haiku consist of three phrases that contain a 'kireji', or cutting word, 17 'on' in a 5,6,5 pattern, and a 'kigo', or seasonal reference.",
+
+]
+
 //cached variables
 //create new variable that stores current line value
 let lineHTML= ""
@@ -279,7 +284,6 @@ for(i = 0; i < line.length; i++) {
       clickSoundTwo.play()
       previousIndex.style.background = 'white';
       previousIndex.classList.remove('disabled')
-      lineHTML !== currentElement.innerHTML 
       previousIndex.innerHTML = currentElement.innerHTML 
       currentElement.innerHTML = lineHTML;
       previousElement.id = currentElement.id
@@ -291,12 +295,14 @@ for(i = 0; i < line.length; i++) {
 
 //Array shuffle function 
 function shuffle(array) {
-  let currentIndex = array.length,  randomIndex;
-  // While there remain elements to shuffle.
+  let currentIndex = array.length;
+  let randomIndex 
+  //While there are elements left 
   while (currentIndex != 0) {
-    // Pick a remaining element.
+    //create a random index and select an element based on that index 
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
+    //swapping array items based on random index 
     [array[currentIndex], array[randomIndex]] = [
       array[randomIndex], array[currentIndex]];
   }

@@ -52,6 +52,7 @@ body {
   grid-row-start: 1;
   grid-column-start: 1;
   position: absolute; 
+  margin: px 1px 1px 1px;
 }
 
 #question-icon {
@@ -86,7 +87,7 @@ body {
   font-size: 1rem; 
   z-index: 1; 
   display: flex; 
-  margin: 25px 30px 30px 70px; 
+  margin: 25px 30px 30px 50px; 
   position: absolute; 
   width: 100px; 
   visibility: hidden;
@@ -159,12 +160,22 @@ body {
 }
 
 #reset {
-  display: flex;
   grid-row-start: 1;
   grid-column-start: 1;
   position: absolute;
   visibility: hidden;
-  margin: 1px
+  margin: 4px 1px 1px 1px;
+}
+
+
+#mute{
+  position: absolute;
+  margin: 680px 1px 1px 10px;
+}
+
+#un-mute{
+  position: absolute;
+  margin: 680px 1px 1px 10px;
 }
 
 
