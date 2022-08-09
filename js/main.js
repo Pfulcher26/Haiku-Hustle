@@ -178,26 +178,110 @@ const haikuArray = [
     "line": "Cuckoo",
     "id": 2
   }
+],
+[
+  {
+    "line": "On a branch",
+    "id": 0
+  },
+  { 
+    "line": "Floating downriver",
+    "id": 1
+  },
+  {
+    "line": "A cricket, singing",
+    "id": 2
+  }
+],
+[
+  {
+    "line": "She never saw fire",
+    "id": 0
+  },
+  { 
+    "line": "But her eyes smolder for the",
+    "id": 1
+  },
+  {
+    "line": "Cold death of Buddha",
+    "id": 2
+  }
+],
+[
+  {
+    "line": "Of Edo's rain",
+    "id": 0
+  },
+  { 
+    "line": "How many mouths did you drink",
+    "id": 1
+  },
+  {
+    "line": "Cuckoo",
+    "id": 2
+  }
+],
+[
+  {
+    "line": "Once more as I wait",
+    "id": 0
+  },
+  { 
+    "line": "For you, night and icy wind",
+    "id": 1
+  },
+  {
+    "line": "Melt into cold rain",
+    "id": 2
+  }
+],
+[
+  {
+    "line": "In the August grass",
+    "id": 0
+  },
+  { 
+    "line": "Struck by the last rays of sun",
+    "id": 1
+  },
+  {
+    "line": "The cracked teacup screams",
+    "id": 2
+  }
 ]
 ]
 
 const questionButtonArray = [
   "",
-  "Click to start",
+  "Click arrow to start",
   "",
   "Arrange the lines in proper order, but be careful, you only have once chance at perfection",
   "",
+  "There are eight rounds.",
+  "",
+  "At the end of eight rounds, you may start again.",
+  "",
+  "Haiku began in thirteenth-century Japan as the opening phrase of renga, an oral poem, generally a hundred stanzas long, which was also composed syllabically.",
+  "",
+  "Haiku emphasize simplicity, intensity and directness of expression.",
+  "",
+  "They focus on a brief moment in time, an ability to read in one breath and a sudden sense of enlightenment.",
+  "",
   "Haiku consist of three phrases that contain a 'kireji', or cutting word, 17 'on' in a 5,6,5 pattern, and a 'kigo', or seasonal reference.",
+  "",
+  "Mastuo Basho is widely considered the master of the haiku.",
+  "",
+  "Since their inception in thirteenth century Japan, haiku have been written all over the world.",
   "",
   "Have you thought about writing a haiku yourself?",
   "",
-  "Think of the last time you were happy", 
+  "Think of the last time you were happ.", 
   "",
   "If that's too hard, think of the last time you were almost happy.",
   "",
-  "Good",
+  "Good.",
   "",
-  "Now capture that feeling and hold it in your heart",
+  "Now capture that feeling and hold it in your heart.",
   "",
   "Very slowly, begin to concentrate on an image associated with that feeling.", 
   "", 
@@ -216,6 +300,8 @@ const questionButtonArray = [
   "And if you get stuck, don't worry.",
   "",
   "Don't worry.",
+  "",
+  "We feel your struggle in solidarity."
 ]
 
 //cached variables
@@ -246,10 +332,10 @@ arrowIcon.addEventListener('click', ()=> {
 
 
 questionIcon.addEventListener('click', function() {
-  instructions.style.visibility !== "hidden" ? instructions.style.visibility = "hidden" : instructions.style.visibility = "visible"; 
   if(questionButtonArray.length === 0) {
     instructions.style.display = "hidden"
   } else {
+    instructions.style.visibility === "hidden" ? instructions.style.visibility = "visible" : instructions.style.visibility = "hidden"; 
     instructions.innerText = questionButtonArray[0];
     questionButtonArray.shift()
     console.log(questionButtonArray)
@@ -281,7 +367,7 @@ function determineWinner() {
     array.push(line[i].id)
   } 
   let arrayString = array.toString()
-  if(arrayString === "0,1,2" && round === haikuArray.length || round === haikuArray.length){
+  if(arrayString === "0,1,2" && round === 9 || round === 9){
       resetIcon.style.visibility = "visible";
       submit.style.visibility = "hidden";
       feetSong.pause()
