@@ -53,7 +53,7 @@ body {
   grid-row-start: 1;
   grid-column-start: 1;
   position: absolute; 
-  margin: px 1px 1px 1px;
+  margin: 3px 1px 1px 1px;
   cursor: pointer; 
 }
 
@@ -62,7 +62,7 @@ body {
   grid-row-start: 1;
   grid-column-start: 1;
   position: absolute; 
-  margin: 4px 0px 0px 137px;
+  margin: 5px 0px 0px 24px;
   visibility: visible; 
   z-index: 1;
   cursor: pointer;
@@ -92,6 +92,7 @@ body {
   z-index: 1; 
   display: flex; 
   margin: 27px 30px 30px 60px; 
+  padding: 50px 20px 20px 20px;
   position: absolute; 
   width: 100px; 
   visibility: hidden;
@@ -170,7 +171,7 @@ body {
   grid-column-start: 1;
   position: absolute;
   visibility: hidden;
-  margin: 4px 1px 1px 1px;
+  margin: 4px 1px 1px 3px;
 }
 
 
@@ -187,5 +188,60 @@ body {
   cursor: pointer;
 }
 
-
+/* media queries */
+@media screen and (max-width: 1000px) {
+  .outer-container {
+  height: 702px; 
+  width: 627px;
+  position: absolute; 
+  }
+  .inner-right-container {
+  height: 700px; 
+  width: 555px;
+  position: absolute; 
+  display: flex; 
+  flex-flow: column;
+  }
+  .game-title {
+    font-size: 2rem;    
+    margin: 40px 80px 0px 0px;  
+  }
+  .instructions{
+    font-size: .9rem; 
+  }
+  .score-box{
+    margin: 290px 0px 100px 610px;
+    position: absolute; 
+  }
+  #seal{
+    margin:65px 10px 10px 30px;
+  }
+  #arrow-icon{
+    margin: 3px 0px 0px 60px;
+    position: absolute; 
+  }
+  #round{
+    margin: 0px 0px 0px 75px;
+    font-size: 2rem;
+    position: absolute; 
+  }
+  .round-box{
+    margin: 10px;
+    position: absolute; 
+  }
+  #question-icon{
+    margin: 30px 0px 0px 60px;
+  }
+  .haiku-lines{
+    margin: 50% 0px 50% 240px;
+    position: absolute; 
+  }
+  .instructions{
+    padding: 50px 100px 300px 200px;
+    margin: 0px 3px 0px 350px;
+  }
+  #round{
+    visibility: hidden;
+  }
+}
 
