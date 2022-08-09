@@ -182,9 +182,40 @@ const haikuArray = [
 ]
 
 const questionButtonArray = [
+  "",
   "Click to start",
+  "",
   "Arrange the lines in proper order, but be careful, you only have once chance at perfection",
-  "Haiku consist of three phrases that contain a 'kireji', or cutting word, 17 'on' in a 5,6,5 pattern, and a 'kigo', or seasonal reference."
+  "",
+  "Haiku consist of three phrases that contain a 'kireji', or cutting word, 17 'on' in a 5,6,5 pattern, and a 'kigo', or seasonal reference.",
+  "",
+  "Have you thought about writing a haiku yourself?",
+  "",
+  "Think of the last time you were happy", 
+  "",
+  "If that's too hard, think of the last time you were almost happy.",
+  "",
+  "Good",
+  "",
+  "Now capture that feeling and hold it in your heart",
+  "",
+  "Very slowly, begin to concentrate on an image associated with that feeling.", 
+  "", 
+  "Turn that image into words.",
+  "",
+  "Don't think too hard, try to feel what your heart is saying.",
+  "",
+  "Now put those words into a line.",
+  "",
+  "And another line...", 
+  "",
+  "And another line...",
+  "",
+  "And another line...",
+  "",
+  "And if you get stuck, don't worry.",
+  "",
+  "Don't worry.",
 ]
 
 //cached variables
@@ -213,9 +244,17 @@ arrowIcon.addEventListener('click', ()=> {
   scoreBox.style.visibility = "visible";
 });
 
-questionIcon.addEventListener('click', ()=> {
+
+questionIcon.addEventListener('click', function() {
   instructions.style.visibility !== "hidden" ? instructions.style.visibility = "hidden" : instructions.style.visibility = "visible"; 
-  clickSoundThree.play();
+  if(questionButtonArray.length === 0) {
+    instructions.style.display = "hidden"
+  } else {
+    instructions.innerText = questionButtonArray[0];
+    questionButtonArray.shift()
+    console.log(questionButtonArray)
+    clickSoundThree.play();
+  }
 });
 
 muteIcon.addEventListener('click', ()=> {
