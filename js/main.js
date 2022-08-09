@@ -375,16 +375,15 @@ function determineWinner() {
       fade(haikuLines)
       resultBox.innerHTML = `You have reached the end.  You solved ${score} haiku.  Breathe deep and ascend.`
     } else if(arrayString === "0,1,2"){
-    console.log('win')
-    yesSound.play()
+    yesSound.play();
     round += 1;
     roundBox.innerHTML = round; 
-    score += 1
+    score += 1;
     scoreBox.innerText = score; 
     rendBoardCounter += 1
     rendBoard()
+    
   } else {
-    console.log('lose')
     ohNo.play();
     round += 1;
     roundBox.innerHTML = round; 
@@ -457,6 +456,11 @@ function rendBoard() {
     line[i].id = shuffledInnerArrays[rendBoardCounter][i].id;
     line[i].innerHTML = shuffledInnerArrays[rendBoardCounter][i].line; 
   }
+  lineHTML = ""
+  line.forEach(element => element.style.background = 'white');
+  line.forEach(element => element.style.background = 'white');
+  line.forEach(element => element.classList.remove('disabled'));
+
 }
 
 //fade in function 

@@ -53,7 +53,7 @@ body {
   grid-row-start: 1;
   grid-column-start: 1;
   position: absolute; 
-  margin: 3px 1px 1px 1px;
+  margin: 9px 1px 1px 1px;
   cursor: pointer; 
 }
 
@@ -62,7 +62,7 @@ body {
   grid-row-start: 1;
   grid-column-start: 1;
   position: absolute; 
-  margin: 5px 0px 0px 24px;
+  margin: 12px 0px 0px 24px;
   visibility: visible; 
   z-index: 1;
   cursor: pointer;
@@ -77,7 +77,7 @@ body {
   z-index: 1; 
   display: flex; 
   justify-content: center; 
-  margin: 20px; 
+  margin: 1px 20px 20px 50px; 
   visibility: hidden;
 }
 
@@ -123,7 +123,7 @@ body {
   z-index: 1; 
   display: flex; 
   justify-content: right;
-  margin: 359px 30px 20px 560px;  
+  margin: 375px 30px 20px 560px;  
   visibility: hidden;
 }
 
@@ -159,7 +159,7 @@ body {
   grid-column-start: 2; 
   height:50px;
   width: 75px;
-  margin: 622px 0px 0px 60px;
+  margin: 642px 0px 0px 45px;
   z-index: 1;
   position: absolute; 
   opacity: 0;
@@ -171,7 +171,7 @@ body {
   grid-column-start: 1;
   position: absolute;
   visibility: hidden;
-  margin: 4px 1px 1px 3px;
+  margin: 11px 1px 1px 3px;
 }
 
 
@@ -193,12 +193,12 @@ body {
   .outer-container {
   height: 702px; 
   width: 627px;
-  position: absolute; 
+  position: relative; 
   }
   .inner-right-container {
   height: 700px; 
-  width: 555px;
-  position: absolute; 
+  width: 525px;
+  position: relative; 
   display: flex; 
   flex-flow: column;
   }
@@ -207,11 +207,12 @@ body {
     margin: 40px 80px 0px 0px;  
   }
   .instructions{
-    font-size: .9rem; 
+    padding: 0px;
+    visibility: hidden; 
   }
   .score-box{
-    margin: 290px 0px 100px 610px;
-    position: absolute; 
+    margin: 380px 10px 100px 450px;
+    position: relative; 
   }
   #seal{
     margin:65px 10px 10px 30px;
@@ -242,6 +243,14 @@ body {
   }
   #round{
     visibility: hidden;
+  }
+  #result{
+    position: absolute;
+    margin: 10px;
+  }
+  #reset{
+    position: fixed;
+    margin: 8px 0px 0px 46px;
   }
 }
 
