@@ -25,6 +25,7 @@
   justify-content: center; 
   width: 250px;
   position: relative;
+  cursor: pointer; 
 }
 
 body {
@@ -53,6 +54,7 @@ body {
   grid-column-start: 1;
   position: absolute; 
   margin: px 1px 1px 1px;
+  cursor: pointer; 
 }
 
 #question-icon {
@@ -63,6 +65,7 @@ body {
   margin: 4px 0px 0px 137px;
   visibility: visible; 
   z-index: 1;
+  cursor: pointer;
 }
 
 .round-box {
@@ -87,7 +90,7 @@ body {
   font-size: 1rem; 
   z-index: 1; 
   display: flex; 
-  margin: 25px 30px 30px 50px; 
+  margin: 25px 30px 30px 70px; 
   position: absolute; 
   width: 100px; 
   visibility: hidden;
@@ -157,6 +160,7 @@ body {
   z-index: 1;
   position: absolute; 
   opacity: 0;
+  cursor: pointer;
 }
 
 #reset {
@@ -176,6 +180,7 @@ body {
 #un-mute{
   position: absolute;
   margin: 680px 1px 1px 10px;
+  visibility: hidden;
 }
 
 

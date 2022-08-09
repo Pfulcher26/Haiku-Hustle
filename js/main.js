@@ -16,6 +16,8 @@ const haikuLines = document.querySelector('.haiku-lines')
 const arrowIcon = document.querySelector('#arrow-icon');
 const questionIcon = document.querySelector('#question-icon');
 const resetIcon = document.querySelector('#reset');
+const muteIcon = document.querySelector('#mute');
+const unMuteIcon = document.querySelector('#un-mute');
 const submit = document.querySelector('#seal');
 const roundBox = document.querySelector('.round-box');
 const scoreBox = document.querySelector('#score');
@@ -344,3 +346,4 @@ function fade(element) {
       op -= op * 0.05;
   }, 50);
 }
+ 
