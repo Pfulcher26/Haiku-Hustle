@@ -208,6 +208,8 @@ arrowIcon.addEventListener('click', ()=> {
   arrowIcon.style.visibility = 'hidden';
   submit.style.opacity = 0;
   submit.style.visibility = "visible";
+  roundBox.style.visibility = "visible";
+  scoreBox.style.visibility = "visible";
 });
 
 questionIcon.addEventListener('click', ()=> {
@@ -253,7 +255,7 @@ function determineWinner() {
   }
 };
 
-//functions 
+//function
 function init() {
   lineHTML= ""
   previousIndex = ""
@@ -311,7 +313,7 @@ function shuffle(array) {
   return array;
 }
 
-// rendboard function
+//rendboard function
 function rendBoard() {
   for(let i=0; i<line.length; i++){
     line[i].id = shuffledInnerArrays[rendBoardCounter][i].id;
@@ -346,4 +348,3 @@ function fade(element) {
       op -= op * 0.05;
   }, 50);
 }
- 
