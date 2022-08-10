@@ -258,7 +258,7 @@ const questionButtonArray = [
   "",
   "There are nine rounds.",
   "",
-  "At the end of eight rounds, you may start again.",
+  "At the end of nine rounds, you may start again.",
   "",
   "Haiku is the plural of haiku",
   "",
@@ -361,6 +361,37 @@ submit.addEventListener('click', determineWinner);
 resetIcon.addEventListener('click', init)
 
 //functions
+//initialization function 
+function init() {
+  lineHTML= ""
+  previousIndex = ""
+  round = 0;
+  roundBox.innerHTML = round;
+  score = 0 
+  scoreBox.innerHTML = score; 
+  rendBoardCounter = 0; 
+  resultBox.innerHTML = "";
+  shuffledArray = shuffle(haikuArray);
+  shuffledInnerArrays = shuffledArray.map(array => shuffle(array));
+  rendBoard();
+  resetIcon.style.visibility = "hidden";
+  arrowIcon.style.visibility = "visible";
+  }
+
+//rendboard function
+function rendBoard() {
+  for(let i=0; i<line.length; i++){
+    line[i].id = shuffledInnerArrays[rendBoardCounter][i].id;
+    line[i].innerHTML = shuffledInnerArrays[rendBoardCounter][i].line; 
+  }
+  lineHTML = ""
+  line.forEach(element => element.style.background = 'white');
+  line.forEach(element => element.style.background = 'white');
+  line.forEach(element => element.classList.remove('disabled'));
+
+}
+
+//function to determine winner
 function determineWinner() {
   clickSound.play()
     let array = []
@@ -393,24 +424,7 @@ function determineWinner() {
   }
 };
 
-//function
-function init() {
-  lineHTML= ""
-  previousIndex = ""
-  round = 0;
-  roundBox.innerHTML = round;
-  score = 0 
-  scoreBox.innerHTML = score; 
-  rendBoardCounter = 0; 
-  resultBox.innerHTML = "";
-  shuffledArray = shuffle(haikuArray);
-  shuffledInnerArrays = shuffledArray.map(array => shuffle(array));
-  rendBoard();
-  resetIcon.style.visibility = "hidden";
-  arrowIcon.style.visibility = "visible";
-  }
-
-//loops through every element in the selected group and attaches event listeners
+//function to handle sorting the haiku list 
 for(i = 0; i < line.length; i++) {
   let currentElement = line[i] 
   line[i].addEventListener('click', function(){
@@ -451,18 +465,6 @@ function shuffle(array) {
   return array;
 }
 
-//rendboard function
-function rendBoard() {
-  for(let i=0; i<line.length; i++){
-    line[i].id = shuffledInnerArrays[rendBoardCounter][i].id;
-    line[i].innerHTML = shuffledInnerArrays[rendBoardCounter][i].line; 
-  }
-  lineHTML = ""
-  line.forEach(element => element.style.background = 'white');
-  line.forEach(element => element.style.background = 'white');
-  line.forEach(element => element.classList.remove('disabled'));
-
-}
 
 //fade in function 
 function unfade(element) {
