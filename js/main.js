@@ -252,7 +252,6 @@ const haikuArray = [
 ]
 
 const questionButtonArray = [
-  "",
   "Click arrow to start",
   "",
   "Arrange the lines in proper order, but be careful, you only have once chance at perfection",
@@ -260,6 +259,8 @@ const questionButtonArray = [
   "There are eight rounds.",
   "",
   "At the end of eight rounds, you may start again.",
+  "",
+  "Haiku is the plural of haiku",
   "",
   "Haiku began in thirteenth-century Japan as the opening phrase of renga, an oral poem, generally a hundred stanzas long, which was also composed syllabically.",
   "",
