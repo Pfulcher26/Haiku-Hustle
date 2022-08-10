@@ -302,7 +302,7 @@ const questionButtonArray = [
   "",
   "Don't worry.",
   "",
-  "We feel your struggle in solidarity."
+  "There are endless chances at perfection."
 ]
 
 //cached variables
