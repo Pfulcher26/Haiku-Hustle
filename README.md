@@ -9,25 +9,33 @@ Haiku Hustle is an educational game that presents users with three lines of haik
 Although this may seem like an easy game to win, consider that many haikus can be rearranged in random order and still read correctly.
 
 For example: 
->From time to time 
+>From time to time
+
 >The clouds give rest
+
 >To the moon-beholders
 
 This could be written in any of the following ways and still make sense: 
 
 1
 >From time to time 
+
 >the clouds give rest
+
 >to the moon-beholders
 
 2
 >The clouds give rest 
+
 >To the moon-beholders 
+
 >From time to time 
 
 3
 >To the moon-beholders
+
 >From time to time
+
 >The clouds give rest
 
 ## Game as Education 
