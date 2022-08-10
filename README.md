@@ -54,7 +54,7 @@ Haiku Hustle is created with HTML, CSS, CSS Bootstrap and vanilla Javascript.  T
 
 ## Installation 
 
-Simply open <a  href="https://haikuhustle.netlify.app/"  target="_blank">this link</a> and start haiku-ing to your heart's content. 
+Simply open <a  href="https://haiku-hustle.netlify.app/"  target="_blank">this link</a> and start haiku-ing to your heart's content. 
 
 ## Future Development Plans
 I would like to incorporate more haiku to choose from, additional functionality in the form of lightning rounds that challenge a user's knowledge within a timed setting, as well as create responsiveness for mobile devices and potentially even develop the core idea further into a full-fledged app. 
