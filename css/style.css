@@ -238,19 +238,20 @@ body {
     position: absolute; 
   }
   .instructions{
-    padding: 50px 100px 300px 200px;
-    margin: 0px 3px 0px 350px;
+    color: white; 
+    margin: 10px 150px 0px 125px;
+    grid-row-start: 1;
   }
   #round{
     visibility: hidden;
   }
   #result{
     position: absolute;
-    margin: 10px;
+    margin: 10px 0px 0px 225px;
   }
   #reset{
     position: fixed;
-    margin: 8px 0px 0px 46px;
+    margin: 8px 0px 0px 40px;
   }
 }
 

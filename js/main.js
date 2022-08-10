@@ -256,7 +256,7 @@ const questionButtonArray = [
   "",
   "Arrange the lines in proper order, but be careful, you only have once chance at perfection",
   "",
-  "There are eight rounds.",
+  "There are nine rounds.",
   "",
   "At the end of eight rounds, you may start again.",
   "",
