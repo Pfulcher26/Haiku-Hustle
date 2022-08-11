@@ -51,6 +51,10 @@ Haiku Hustle is designed with a minimal aesthetic that relies on precise design 
 
 Follow <a  href="https://whimsical.com/haiku-hustle-7irmdD9BYZ5TQtgc2UZ25t" target="_blank">this</a> link to see a rough draft of the UI created with Whimsical. 
 
+![Screenshot of gameplay of wireframe for Haiku Hustle made using Whimsical](https://i.imgur.com/VvksbBm.png)
+
+
+
 See the finished UI in the screenshot below: 
 
 ![Screenshot of gameplay screen for Haiku Hustle](https://i.imgur.com/VvDRhtd.png)
