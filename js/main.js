@@ -445,7 +445,7 @@ function determineWinner() {
   }
 };
 
-//function to handle sorting the haiku list 
+//function to handle sorting the DOM elements containing haiku lines
 for(i = 0; i < line.length; i++) {
   let currentElement = line[i] 
   line[i].addEventListener('click', function(){
@@ -465,7 +465,6 @@ for(i = 0; i < line.length; i++) {
       currentElement.innerHTML = lineHTML;
       previousElement.id = currentElement.id
       currentElement.id = previousID
-      lineHTML = ""
     } 
   });
 }

@@ -64,6 +64,13 @@ Haiku Hustle is created with HTML, CSS, CSS Bootstrap and vanilla Javascript.  T
 
 Simply open <a  href="https://haiku-hustle.netlify.app/"  target="_blank">this link</a> and start haiku-ing to your heart's content. 
 
+## Project Hurdles
+
+As aforementioned, I needed to develop a sortable list.  While there were many templates online, I wanted to create my own.  The solution I came up with utilizes a loop to add event listeners to the DOM elements containing the haiku lines.  The logic relies on caching the innerHTML of the current element and assigning it to a global variable.  The current element is then assigned to a series of variables that assign the current element as the previous element.  These are then used to swap the content of the element selected upon the next click with the content of the previous element, using id's as well, to effectively allow the two DOM elements to exchange their content.  
+
+![Screenshot showing code for sortable list laid out in VS Code](https://i.imgur.com/KvAicM8.png
+)
+
 ## Future Development Plans
 I would like to incorporate more haiku to choose from, additional functionality in the form of lightning rounds that challenge a user's knowledge within a timed setting, as well as create responsiveness for mobile devices and potentially even develop the core idea further into a full-fledged app. 
 
