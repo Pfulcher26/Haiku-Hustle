@@ -1,15 +1,15 @@
-
-
-
 //state variables 
+
 //sounds
+
 const clickSound = new Audio('click.wav');
 const clickSoundTwo = new Audio('click2.wav');
 const clickSoundThree = new Audio('click3.wav');
 const victorySound = new Audio('victory.wav');
 const yesSound = new Audio('yes.wav')
 const feetSong = new Audio('FEET.mp4');
-const ohNo = new Audio('ohno.wav')
+const ohNo = new Audio('ohno.wav');
+
 //DOM
 const instructions = document.querySelector('.instructions');
 const haikuLines = document.querySelector('.haiku-lines')
@@ -22,6 +22,7 @@ const submit = document.querySelector('#seal');
 const roundBox = document.querySelector('.round-box');
 const scoreBox = document.querySelector('#score');
 const resultBox = document.querySelector('#result');
+
 //Creates a nested array where the inner arrays contains objects with key
 //value pairs that petain to the haiku line and id associated with the line
 const haikuArray = [
@@ -248,9 +249,24 @@ const haikuArray = [
     "line": "The cracked teacup screams",
     "id": 2
   }
-]
+],
+[
+  {
+    "line": "From time to time",
+    "id": 0
+  },
+  { 
+    "line": "The clouds give rest",
+    "id": 1
+  },
+  {
+    "line": "To the moon beholders",
+    "id": 2
+  }
+] 
 ]
 
+//Array of responses that are issued when the user presses the question icon
 const questionButtonArray = [
   "Click arrow to start",
   "",
@@ -308,8 +324,6 @@ const questionButtonArray = [
 //cached variables
 //create new variable that stores current line value
 let lineHTML= ""
-//need to establish a previous index variable to allow innerHTML content to switch
-//places
 let previousIndex = ""
 let line = document.querySelectorAll('.list-group-item');
 let round = 1
@@ -320,6 +334,8 @@ let shuffledArray = shuffle(haikuArray);
 let shuffledInnerArrays = shuffledArray.map(array => shuffle(array));
 
 //event listeners 
+
+//arrow icon 
 arrowIcon.addEventListener('click', ()=> {
   feetSong.play();
   unfade(submit);
@@ -331,7 +347,7 @@ arrowIcon.addEventListener('click', ()=> {
   scoreBox.style.visibility = "visible";
 });
 
-
+//queston icon
 questionIcon.addEventListener('click', function() {
   if(questionButtonArray.length === 0) {
     instructions.style.display = "hidden"
@@ -344,28 +360,33 @@ questionIcon.addEventListener('click', function() {
   }
 });
 
+//mute icon
 muteIcon.addEventListener('click', ()=> {
   feetSong.pause()
   muteIcon.style.visibility = "hidden";
   unMuteIcon.style.visibility = "visible";
 });
 
+//unmute icon
 unMuteIcon.addEventListener('click', ()=> {
   feetSong.play()
   unMuteIcon.style.visibility = "hidden";
   muteIcon.style.visibility = "visible";
 });
 
+//submit icon
 submit.addEventListener('click', determineWinner); 
 
+//reset icon 
 resetIcon.addEventListener('click', init)
 
 //functions
+
 //initialization function 
 function init() {
   lineHTML= ""
   previousIndex = ""
-  round = 0;
+  round = 1;
   roundBox.innerHTML = round;
   score = 0 
   scoreBox.innerHTML = score; 
