@@ -62,7 +62,7 @@ See the finished UI in the screenshot below:
 
 ## Technologies Used
 
-Haiku Hustle is created with HTML, CSS, CSS Bootstrap and vanilla Javascript.  The aspect of code development that I found most engaging was creating code from scratch that allowed users to freely sort the lines of haiku.  Originally I researched templates for a sortable list, but decided to make my own.  I hope to refactor my code further, so that it appears as lapidary and elegant as a good haiku. 
+Haiku Hustle is created with HTML, CSS, CSS Bootstrap and vanilla Javascript.  The aspect of code development that I found most engaging was creating code from scratch that allowed users to freely sort the lines of haiku.  Originally I researched templates for a sortable list, but in the end decided to make my own.  I hope to refactor my code further, so that it appears as lapidary and elegant as a good haiku. 
 
 ## Installation 
 
@@ -70,7 +70,7 @@ Simply open <a  href="https://haiku-hustle.netlify.app/"  target="_blank">this l
 
 ## Project Hurdles
 
-As aforementioned, I needed to develop a sortable list.  While there were many templates online, I wanted to create my own.  The solution I came up with utilizes a loop to add event listeners to the DOM elements containing the haiku lines.  The logic relies on caching the innerHTML of the current element and assigning it to a global variable.  The current element is then assigned to a series of variables that assign the current element as the previous element.  These are then used to swap the content of the element selected upon the next click with the content of the previous element, using id's as well, to effectively allow the two DOM elements to exchange their content.  
+As aforementioned, I needed to develop a sortable list.  While there were many templates online, I wanted to create my own.  The solution I came up with utilizes a loop to add event listeners to the DOM elements containing the haiku lines.  The logic relies on caching the innerHTML of the current element and assigning it to a global variable.  The current element is then assigned to a series of variables that store different properties of the current element under the heading of previous element, previous index, etc.  These are then used to swap the content of the next element selected with the content of the previous element to effectively allow the two DOM elements to exchange their ids and HTML content.  
 
 ![Screenshot showing code for sortable list laid out in VS Code](https://i.imgur.com/KvAicM8.png
 )
