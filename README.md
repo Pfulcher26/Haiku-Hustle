@@ -45,7 +45,7 @@ Haiku Hustle provides users with an immersive and relaxing puzzle-based experien
 As a former educator and language instructor, my goal is the harmonization of humanities and tech.  I am interested in developing products that help others grow through learning and hopefully sparking people's interest in the arts.  
 
 
-## Aesthetic Philosophy 
+## Design Philosophy 
 
 Haiku Hustle is designed with a minimal aesthetic that relies on precise design to guide the user along using their intuition without needing to bluntly state what is expected.  There are many easter eggs built into the design that allows for a deeper level of immersion.  The use of Japanese kanyo ongaku, or environmental music, notably the song Feet from Hiroshi Yoshimura's seminal work Green, creates a sublime space in which learning can be achieved on an almost subconscious level.  
 
