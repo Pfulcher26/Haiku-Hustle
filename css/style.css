@@ -11,10 +11,10 @@
   z-index: 1; 
   display: flex; 
   justify-content: center;  
-  margin: 310px 270px 0px 285px;  
+  margin: 311px 270px 0px 355px;  
   opacity: 0;
   border: solid gold 2px;
-  width: 450px;
+  width: 355px;
   height: 125px;
   position: absolute; 
 }
@@ -78,7 +78,7 @@ body {
   z-index: 1; 
   display: flex; 
   justify-content: center; 
-  margin: 0px 20px 20px 50px; 
+  margin: 2px 20px 20px 50px; 
   visibility: hidden;
 }
 
@@ -105,13 +105,13 @@ body {
   grid-row-end: 1;
   grid-column-start: 2; 
   color: white; 
-  font-family: 'faster one', serif;
-  font-size: 4rem; 
+  font-family: 'Babylonica', serif;
+  font-size: 7rem; 
   font-style: italic;
   z-index: 1; 
   display: flex; 
   justify-content: right;
-  margin: 40px 115px;  
+  margin: 40px 100px 0px 270px;  
 }
 
 .score-box {
@@ -204,7 +204,7 @@ body {
   flex-flow: column;
   }
   .game-title {
-    font-size: 2rem;    
+    font-size: 4rem;    
     margin: 40px 80px 0px 0px;  
   }
   .instructions{
@@ -235,7 +235,7 @@ body {
     margin: 30px 0px 0px 60px;
   }
   .haiku-lines{
-    margin: 50% 0px 50% 115px;
+    margin: 50% 0px 50% 113px;
     width: 500px;
     height: 124px;
     position: absolute; 
