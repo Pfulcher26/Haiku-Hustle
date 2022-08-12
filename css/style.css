@@ -5,24 +5,26 @@
 .haiku-lines {
   grid-row-start: 1;
   grid-column-start: 2; 
-  font-family: 'righteous'; 
+  font-family: 'silkscreen'; 
   font-style: bold; 
-  font-size: 1rem; 
+  font-size: .9rem; 
   z-index: 1; 
   display: flex; 
-  justify-content: left;  
-  margin: 310px 270px 0px auto;  
+  justify-content: center;  
+  margin: 310px 270px 0px 285px;  
   opacity: 0;
   border: solid gold 2px;
-  width: 254px;
-  height: 132px;
+  width: 450px;
+  height: 125px;
+  position: absolute; 
 }
 
 .list-group-item {
   border: solid rgb(255, 255, 255) 2px; 
   display: flex; 
   justify-content: center; 
-  width: 250px;
+  width: auto;
+  height: auto; 
   position: relative;
   cursor: pointer; 
 }
@@ -70,13 +72,13 @@ body {
 .round-box {
   grid-row-start: 1;
   color: rgb(21, 19, 19); 
-  font-family: 'righteous'; 
+  font-family: 'silkscreen'; 
   font-style: bold; 
-  font-size: 2rem; 
+  font-size: 1.7rem; 
   z-index: 1; 
   display: flex; 
   justify-content: center; 
-  margin: 1px 20px 20px 50px; 
+  margin: 0px 20px 20px 50px; 
   visibility: hidden;
 }
 
@@ -85,12 +87,12 @@ body {
   grid-row-start: 2;
   grid-column-start: 1; 
   color: rgb(21, 19, 19); 
-  font-family: 'righteous'; 
+  font-family: 'silkscreen'; 
   font-style: bold; 
-  font-size: 1rem; 
+  font-size: .8rem; 
   z-index: 1; 
   display: flex; 
-  margin: 27px 30px 30px 60px; 
+  margin: 27px 30px 30px 50px; 
   padding: 50px 20px 20px 20px;
   position: absolute; 
   width: 100px; 
@@ -103,20 +105,20 @@ body {
   grid-row-end: 1;
   grid-column-start: 2; 
   color: white; 
-  font-family: 'inspiration', cursive;
+  font-family: 'faster one', serif;
   font-size: 4rem; 
   font-style: italic;
   z-index: 1; 
   display: flex; 
   justify-content: right;
-  margin: 40px 50px;  
+  margin: 40px 115px;  
 }
 
 .score-box {
   grid-row-start: last-line;
   grid-column-start: 2; 
   color: white; 
-  font-family: 'righteous'; 
+  font-family: 'silkscreen'; 
   font-style: bold; 
   font-size: 2rem; 
   z-index: 1; 
@@ -130,7 +132,7 @@ body {
   grid-row-start: last-line;
   grid-column-start: 2; 
   color: white; 
-  font-family: 'righteous'; 
+  font-family: 'silkscreen'; 
   font-style: bold; 
   font-size: 1.3rem; 
   z-index: 1; 
@@ -233,7 +235,9 @@ body {
     margin: 30px 0px 0px 60px;
   }
   .haiku-lines{
-    margin: 50% 0px 50% 240px;
+    margin: 50% 0px 50% 115px;
+    width: 500px;
+    height: 124px;
     position: absolute; 
   }
   .instructions{

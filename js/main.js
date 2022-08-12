@@ -337,14 +337,14 @@ let shuffledInnerArrays = shuffledArray.map(array => shuffle(array));
 
 //arrow icon 
 arrowIcon.addEventListener('click', ()=> {
-  feetSong.play();
-  unfade(submit);
-  unfade(haikuLines);
-  arrowIcon.style.visibility = 'hidden';
-  submit.style.opacity = 0;
-  submit.style.visibility = "visible";
-  roundBox.style.visibility = "visible";
-  scoreBox.style.visibility = "visible";
+feetSong.play();
+unfade(submit);
+unfade(haikuLines);
+arrowIcon.style.visibility = 'hidden';
+submit.style.opacity = 0;
+submit.style.visibility = "visible";
+roundBox.style.visibility = "visible";
+scoreBox.style.visibility = "visible";
 });
 
 //queston icon
@@ -465,6 +465,7 @@ for(i = 0; i < line.length; i++) {
       currentElement.innerHTML = lineHTML;
       previousElement.id = currentElement.id
       currentElement.id = previousID
+      lineHTML = ""
     } 
   });
 }
