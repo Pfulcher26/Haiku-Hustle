@@ -397,6 +397,7 @@ function init() {
   rendBoard();
   resetIcon.style.visibility = "hidden";
   arrowIcon.style.visibility = "visible";
+  document.querySelector('.inner-right-container').style.backgroundImage = "url('css/ukioe.jpg')"; 
   }
 
 //rendboard function
@@ -423,10 +424,11 @@ function determineWinner() {
   if(arrayString === "0,1,2" && round === 9 || round === 9){
       resetIcon.style.visibility = "visible";
       submit.style.visibility = "hidden";
-      feetSong.pause()
-      victorySound.play()
-      fade(haikuLines)
-      resultBox.innerHTML = `You have reached the end.  You solved ${score} haiku.  Breathe deep and ascend.`
+      feetSong.pause();
+      victorySound.play();
+      fade(haikuLines);
+      resultBox.innerHTML = `You have reached the end.  You solved ${score} haiku.  Breathe deep and ascend.`;
+      document.querySelector('.inner-right-container').style.backgroundImage = "url('css/colorinjapan.png')"; 
     } else if(arrayString === "0,1,2"){
     yesSound.play();
     round += 1;
@@ -451,7 +453,7 @@ for(i = 0; i < line.length; i++) {
   line[i].addEventListener('click', function(){
     if (lineHTML === "") {
       clickSound.play()
-      currentElement.style.background = 'goldenrod'; 
+      currentElement.style.background = '#fbe4e6'; 
       currentElement.classList.add('disabled');
       lineHTML = currentElement.innerHTML;
       previousIndex = currentElement

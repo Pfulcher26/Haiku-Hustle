@@ -44,7 +44,7 @@ body {
   grid-template-columns: 2fr 6fr; 
   grid-template-rows: [row-1-start] 25% [row-1-end] 100px [third-line] auto [last-line]; 
   justify-content: center;
-  border: solid goldenrod 1px;
+  border: solid #fbe4e6 1px;
   background-color: rgb(243, 239, 237); 
 }
 
@@ -78,7 +78,7 @@ body {
   z-index: 1; 
   display: flex; 
   justify-content: center; 
-  margin: 2px 20px 20px 50px; 
+  margin: 0px 20px 20px 50px; 
   visibility: hidden;
 }
 
@@ -111,7 +111,7 @@ body {
   z-index: 1; 
   display: flex; 
   justify-content: right;
-  margin: 40px 100px 0px 270px;  
+  margin: 20px 100px 0px 270px;  
 }
 
 .score-box {
@@ -151,7 +151,7 @@ body {
   width: 700px;
   height: 698px;
   border: solid goldenrod 3px; 
-  background-image: url('colorinjapan.png'); 
+  background-image: url('seaside.jpg'); 
   position: relative;
   margin: 0px 0px 0px 100px;
 }
