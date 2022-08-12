@@ -2,13 +2,13 @@
 
 //sounds
 
-const clickSound = new Audio('click.wav');
-const clickSoundTwo = new Audio('click2.wav');
-const clickSoundThree = new Audio('click3.wav');
-const victorySound = new Audio('victory.wav');
-const yesSound = new Audio('yes.wav')
-const feetSong = new Audio('FEET.mp4');
-const ohNo = new Audio('ohno.wav');
+const clickSound = new Audio('sounds/click.wav');
+const clickSoundTwo = new Audio('sounds/click2.wav');
+const clickSoundThree = new Audio('sounds/click3.wav');
+const victorySound = new Audio('sounds/victory.wav');
+const yesSound = new Audio('sounds/yes.wav')
+const feetSong = new Audio('sounds/FEET.mp4');
+const ohNo = new Audio('sounds/ohno.wav');
 
 //DOM
 const instructions = document.querySelector('.instructions');
@@ -397,7 +397,7 @@ function init() {
   rendBoard();
   resetIcon.style.visibility = "hidden";
   arrowIcon.style.visibility = "visible";
-  document.querySelector('.inner-right-container').style.backgroundImage = "url('css/ukioe.jpg')"; 
+  document.querySelector('.inner-right-container').style.backgroundImage = "url('img/ukioe.jpg')"; 
   }
 
 //rendboard function
@@ -427,8 +427,8 @@ function determineWinner() {
       feetSong.pause();
       victorySound.play();
       fade(haikuLines);
-      resultBox.innerHTML = `You have reached the end.  You solved ${score} haiku.  Breathe deep and ascend.`;
-      document.querySelector('.inner-right-container').style.backgroundImage = "url('css/colorinjapan.png')"; 
+      resultBox.innerHTML = `Congratulations, delicate mooncake. You solved ${score} haiku.  Breathe deep and ascend.`;
+      document.querySelector('.inner-right-container').style.backgroundImage = "url('img/colorinjapan.png')"; 
     } else if(arrayString === "0,1,2"){
     yesSound.play();
     round += 1;

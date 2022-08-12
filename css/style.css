@@ -134,12 +134,13 @@ body {
   color: white; 
   font-family: 'silkscreen'; 
   font-style: bold; 
-  font-size: 1.3rem; 
+  font-size: 1.1rem; 
   z-index: 1; 
   display: flex; 
   justify-content: right;
-  width: 50%;
-  margin: 225px 380px 20px 300px;  
+  width: 100px; 
+  margin: 300px 0px 20px 600px;  
+  position: absolute; 
 }
 
 .inner-right-container {
@@ -250,7 +251,7 @@ body {
   }
   #result{
     position: absolute;
-    margin: 10px 0px 0px 225px;
+    margin: 10px 0px 0px 405px;
   }
   #reset{
     position: fixed;

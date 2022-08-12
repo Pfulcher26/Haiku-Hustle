@@ -70,7 +70,7 @@ Simply open <a  href="https://haiku-hustle.netlify.app/"  target="_blank">this l
 
 ## Project Hurdles
 
-As aforementioned, I needed to develop a sortable list.  While there were many templates online, I wanted to create my own.  The solution I came up with utilizes a loop to add event listeners to the DOM elements containing the haiku lines.  The logic relies on caching the innerHTML of the current element and assigning it to a global variable.  The current element is then assigned to a series of variables that store different properties of the current element under the heading of previous element, previous index, etc.  These are then used to swap the content of the next element selected with the content of the previous element to effectively allow the two DOM elements to exchange their ids and HTML content.  
+As mentioned before, I needed to develop a sortable list.  While there are many templates online, I wanted to create my own.  The solution I came up with utilizes a loop to add event listeners to the DOM elements containing the haiku lines.  The logic relies on caching the innerHTML of the current element and assigning it to a global variable.  The current element is then assigned to a series of variables that store different properties of the current element under the heading of previous element, previous index, etc.  These are then used to swap the content of the next element selected with the content of the previous element to effectively allow the two DOM elements to exchange their ids and HTML content.  
 
 ![Screenshot showing code for sortable list laid out in VS Code](https://i.imgur.com/KvAicM8.png
 )
@@ -86,7 +86,5 @@ Please feel free to contact me with any ideas regarding this project.  I enthusi
 Email: pfulcher26@gmail.com 
 
 [LinkedIn](https://www.linkedin.com/in/payne-fulcher/)
-
-
 
 
